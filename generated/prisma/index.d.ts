@@ -4577,7 +4577,7 @@ export namespace Prisma {
     date: Date | string
     time: string
     description: string
-    participantCount: number
+    participantCount?: number
     createdAt?: Date | string
   }
 
@@ -4588,7 +4588,7 @@ export namespace Prisma {
     date: Date | string
     time: string
     description: string
-    participantCount: number
+    participantCount?: number
     createdAt?: Date | string
   }
 
@@ -4620,7 +4620,7 @@ export namespace Prisma {
     date: Date | string
     time: string
     description: string
-    participantCount: number
+    participantCount?: number
     createdAt?: Date | string
   }
 

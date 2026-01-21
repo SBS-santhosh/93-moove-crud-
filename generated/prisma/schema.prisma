@@ -38,6 +38,6 @@ model Session {
   date             DateTime
   time             String
   description      String
-  participantCount Int
+  participantCount Int      @default(0)
   createdAt        DateTime @default(now())
 }

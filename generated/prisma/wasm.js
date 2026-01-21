@@ -139,7 +139,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/unavaneeth/IdeaProjects/93moovefinal/generated/prisma",
+      "value": "C:\\Users\\riyad\\Desktop\\93moove-main\\generated\\prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -148,17 +148,16 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-3.0.x",
+        "value": "windows",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/unavaneeth/IdeaProjects/93moovefinal/prisma/schema.prisma",
+    "sourceFilePath": "C:\\Users\\riyad\\Desktop\\93moove-main\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../../prisma",
   "clientVersion": "6.18.0",
@@ -167,6 +166,7 @@ const config = {
     "db"
   ],
   "activeProvider": "sqlite",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -175,8 +175,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n  url      = \"file:app.db\"\n}\n\nmodel User {\n  id         Int    @id @default(autoincrement())\n  Nom        String\n  Prenom     String\n  Email      String\n  TypeProfil String\n  MotdePasse String\n  Age        Int\n}\n\nmodel Instructeur {\n  id     Int    @id @default(autoincrement())\n  Nom    String\n  Prenom String\n  Email  String\n}\n\nmodel Session {\n  id               Int      @id @default(autoincrement())\n  title            String\n  instructor       String\n  date             DateTime\n  time             String\n  description      String\n  participantCount Int\n  createdAt        DateTime @default(now())\n}\n",
-  "inlineSchemaHash": "68fb8bd99fa02644393721f35f5ab828fa7cb8c75b51e369adb1a9d656aa83c1",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n  url      = \"file:app.db\"\n}\n\nmodel User {\n  id         Int    @id @default(autoincrement())\n  Nom        String\n  Prenom     String\n  Email      String\n  TypeProfil String\n  MotdePasse String\n  Age        Int\n}\n\nmodel Instructeur {\n  id     Int    @id @default(autoincrement())\n  Nom    String\n  Prenom String\n  Email  String\n}\n\nmodel Session {\n  id               Int      @id @default(autoincrement())\n  title            String\n  instructor       String\n  date             DateTime\n  time             String\n  description      String\n  participantCount Int      @default(0)\n  createdAt        DateTime @default(now())\n}\n",
+  "inlineSchemaHash": "741bdf1b2dea8ae81e35a7a1fa4f86f3544a12b763dfc283de7d3f3b8ed2a9ea",
   "copyEngine": true
 }
 config.dirname = '/'
