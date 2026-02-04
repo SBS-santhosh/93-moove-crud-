@@ -139,7 +139,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "C:\\Users\\riyad\\Desktop\\93moove-main\\generated\\prisma",
+      "value": "/Users/notsanthosh/Documents/93moove-main/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -148,12 +148,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "windows",
+        "value": "darwin-arm64",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "C:\\Users\\riyad\\Desktop\\93moove-main\\prisma\\schema.prisma",
+    "sourceFilePath": "/Users/notsanthosh/Documents/93moove-main/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
