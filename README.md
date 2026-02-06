@@ -48,4 +48,4 @@ Voici les comptes de test créés. **Note** : La page de connexion demande actue
 - **Sessions** : `/sessions`
 - **Connexion** : `/connexion`
 - **Admin Panel** : `/modifsession` (Accessible pour les administrateurs)
-# 93-moove-crud-
+# 93-moove_crud
