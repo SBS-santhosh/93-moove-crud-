@@ -55,7 +55,12 @@ export default async function Page() {
                     </div>
 
                     <div className="bg-white rounded-lg shadow-md">
-                        <div className="p-4 border-b font-bold text-purple-700">Liste utilisateurs</div>
+                        <div className="p-4 border-b flex justify-between items-center">
+                            <span className="font-bold text-purple-700">Liste utilisateurs</span>
+                            <Link href="/ajoututilisateur" className="bg-purple-600 text-white px-3 py-1 rounded text-sm hover:bg-purple-700 transition">
+                                + Ajouter Utilisateur
+                            </Link>
+                        </div>
                         <table className="w-full text-left">
                             <thead className="bg-purple-50">
                                 <tr>
@@ -86,7 +91,12 @@ export default async function Page() {
                     </div>
 
                     <div id="sessions" className="bg-white rounded-lg shadow-md mt-6">
-                        <div className="p-4 border-b font-bold text-green-700">Liste sessions</div>
+                        <div className="p-4 border-b flex justify-between items-center">
+                            <span className="font-bold text-green-700">Liste sessions</span>
+                            <Link href="/ajoutsession" className="bg-green-600 text-white px-3 py-1 rounded text-sm hover:bg-green-700 transition">
+                                + Ajouter Session
+                            </Link>
+                        </div>
                         <table className="w-full text-left">
                             <thead className="bg-green-50">
                                 <tr>

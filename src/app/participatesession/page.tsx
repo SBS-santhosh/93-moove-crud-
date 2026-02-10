@@ -1,6 +1,6 @@
 import { PrismaClient } from "../../../generated/prisma";
 import Link from "next/link";
-import {revalidatePath} from "next/cache";
+import { revalidatePath } from "next/cache";
 import Image from "next/image";
 const prisma = new PrismaClient();
 
@@ -28,14 +28,14 @@ export default async function SessionsPage() {
                             <div className="flex flex-wrap -mx-4">
                                 <div className="w-full lg:w-2/3 px-4 mb-8 lg:mb-0">
                                     <img className="w-full rounded-lg shadow-lg"
-                                         src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b"
-                                         alt="Concert Image"/>
+                                        src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b"
+                                        alt="Concert Image" />
                                 </div>
                                 <div className="w-full lg:w-1/3 px-4">
                                     <h1 className="text-4xl font-bold mb-4">{session.title}</h1>
                                     <p className="text-lg mb-6">{session.description}</p>
                                     <div className="mb-6">
-                                        <p className="text-xl font-bold mb-2">{session.date}</p>
+                                        <p className="text-xl font-bold mb-2">{new Date(session.date).toLocaleDateString()}</p>
                                         <p className="text-lg">{session.time}</p>
                                     </div>
                                     <div className="mb-6">
