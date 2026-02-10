@@ -139,7 +139,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/notsanthosh/Documents/93moove-main/generated/prisma",
+      "value": "/Users/notsanthosh/Documents/93-moove-crud-/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -153,7 +153,7 @@ const config = {
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/notsanthosh/Documents/93moove-main/prisma/schema.prisma",
+    "sourceFilePath": "/Users/notsanthosh/Documents/93-moove-crud-/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
@@ -166,7 +166,7 @@ const config = {
     "db"
   ],
   "activeProvider": "sqlite",
-  "postinstall": false,
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
