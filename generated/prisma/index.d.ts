@@ -1073,6 +1073,7 @@ export namespace Prisma {
     TypeProfil: string | null
     MotdePasse: string | null
     Age: number | null
+    isValidated: boolean | null
   }
 
   export type UserMaxAggregateOutputType = {
@@ -1083,6 +1084,7 @@ export namespace Prisma {
     TypeProfil: string | null
     MotdePasse: string | null
     Age: number | null
+    isValidated: boolean | null
   }
 
   export type UserCountAggregateOutputType = {
@@ -1093,6 +1095,7 @@ export namespace Prisma {
     TypeProfil: number
     MotdePasse: number
     Age: number
+    isValidated: number
     _all: number
   }
 
@@ -1115,6 +1118,7 @@ export namespace Prisma {
     TypeProfil?: true
     MotdePasse?: true
     Age?: true
+    isValidated?: true
   }
 
   export type UserMaxAggregateInputType = {
@@ -1125,6 +1129,7 @@ export namespace Prisma {
     TypeProfil?: true
     MotdePasse?: true
     Age?: true
+    isValidated?: true
   }
 
   export type UserCountAggregateInputType = {
@@ -1135,6 +1140,7 @@ export namespace Prisma {
     TypeProfil?: true
     MotdePasse?: true
     Age?: true
+    isValidated?: true
     _all?: true
   }
 
@@ -1232,6 +1238,7 @@ export namespace Prisma {
     TypeProfil: string
     MotdePasse: string
     Age: number
+    isValidated: boolean
     _count: UserCountAggregateOutputType | null
     _avg: UserAvgAggregateOutputType | null
     _sum: UserSumAggregateOutputType | null
@@ -1261,6 +1268,7 @@ export namespace Prisma {
     TypeProfil?: boolean
     MotdePasse?: boolean
     Age?: boolean
+    isValidated?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1271,6 +1279,7 @@ export namespace Prisma {
     TypeProfil?: boolean
     MotdePasse?: boolean
     Age?: boolean
+    isValidated?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -1281,6 +1290,7 @@ export namespace Prisma {
     TypeProfil?: boolean
     MotdePasse?: boolean
     Age?: boolean
+    isValidated?: boolean
   }, ExtArgs["result"]["user"]>
 
   export type UserSelectScalar = {
@@ -1291,9 +1301,10 @@ export namespace Prisma {
     TypeProfil?: boolean
     MotdePasse?: boolean
     Age?: boolean
+    isValidated?: boolean
   }
 
-  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "Nom" | "Prenom" | "Email" | "TypeProfil" | "MotdePasse" | "Age", ExtArgs["result"]["user"]>
+  export type UserOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "Nom" | "Prenom" | "Email" | "TypeProfil" | "MotdePasse" | "Age" | "isValidated", ExtArgs["result"]["user"]>
 
   export type $UserPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "User"
@@ -1306,6 +1317,7 @@ export namespace Prisma {
       TypeProfil: string
       MotdePasse: string
       Age: number
+      isValidated: boolean
     }, ExtArgs["result"]["user"]>
     composites: {}
   }
@@ -1736,6 +1748,7 @@ export namespace Prisma {
     readonly TypeProfil: FieldRef<"User", 'String'>
     readonly MotdePasse: FieldRef<"User", 'String'>
     readonly Age: FieldRef<"User", 'Int'>
+    readonly isValidated: FieldRef<"User", 'Boolean'>
   }
     
 
@@ -3144,6 +3157,8 @@ export namespace Prisma {
     time: string | null
     description: string | null
     participantCount: number | null
+    pendingInstructor: string | null
+    invitationStatus: string | null
     createdAt: Date | null
   }
 
@@ -3155,6 +3170,8 @@ export namespace Prisma {
     time: string | null
     description: string | null
     participantCount: number | null
+    pendingInstructor: string | null
+    invitationStatus: string | null
     createdAt: Date | null
   }
 
@@ -3166,6 +3183,8 @@ export namespace Prisma {
     time: number
     description: number
     participantCount: number
+    pendingInstructor: number
+    invitationStatus: number
     createdAt: number
     _all: number
   }
@@ -3189,6 +3208,8 @@ export namespace Prisma {
     time?: true
     description?: true
     participantCount?: true
+    pendingInstructor?: true
+    invitationStatus?: true
     createdAt?: true
   }
 
@@ -3200,6 +3221,8 @@ export namespace Prisma {
     time?: true
     description?: true
     participantCount?: true
+    pendingInstructor?: true
+    invitationStatus?: true
     createdAt?: true
   }
 
@@ -3211,6 +3234,8 @@ export namespace Prisma {
     time?: true
     description?: true
     participantCount?: true
+    pendingInstructor?: true
+    invitationStatus?: true
     createdAt?: true
     _all?: true
   }
@@ -3304,11 +3329,13 @@ export namespace Prisma {
   export type SessionGroupByOutputType = {
     id: number
     title: string
-    instructor: string
+    instructor: string | null
     date: Date
     time: string
     description: string
     participantCount: number
+    pendingInstructor: string | null
+    invitationStatus: string | null
     createdAt: Date
     _count: SessionCountAggregateOutputType | null
     _avg: SessionAvgAggregateOutputType | null
@@ -3339,6 +3366,8 @@ export namespace Prisma {
     time?: boolean
     description?: boolean
     participantCount?: boolean
+    pendingInstructor?: boolean
+    invitationStatus?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["session"]>
 
@@ -3350,6 +3379,8 @@ export namespace Prisma {
     time?: boolean
     description?: boolean
     participantCount?: boolean
+    pendingInstructor?: boolean
+    invitationStatus?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["session"]>
 
@@ -3361,6 +3392,8 @@ export namespace Prisma {
     time?: boolean
     description?: boolean
     participantCount?: boolean
+    pendingInstructor?: boolean
+    invitationStatus?: boolean
     createdAt?: boolean
   }, ExtArgs["result"]["session"]>
 
@@ -3372,10 +3405,12 @@ export namespace Prisma {
     time?: boolean
     description?: boolean
     participantCount?: boolean
+    pendingInstructor?: boolean
+    invitationStatus?: boolean
     createdAt?: boolean
   }
 
-  export type SessionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "instructor" | "date" | "time" | "description" | "participantCount" | "createdAt", ExtArgs["result"]["session"]>
+  export type SessionOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "title" | "instructor" | "date" | "time" | "description" | "participantCount" | "pendingInstructor" | "invitationStatus" | "createdAt", ExtArgs["result"]["session"]>
 
   export type $SessionPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     name: "Session"
@@ -3383,11 +3418,13 @@ export namespace Prisma {
     scalars: $Extensions.GetPayloadResult<{
       id: number
       title: string
-      instructor: string
+      instructor: string | null
       date: Date
       time: string
       description: string
       participantCount: number
+      pendingInstructor: string | null
+      invitationStatus: string | null
       createdAt: Date
     }, ExtArgs["result"]["session"]>
     composites: {}
@@ -3819,6 +3856,8 @@ export namespace Prisma {
     readonly time: FieldRef<"Session", 'String'>
     readonly description: FieldRef<"Session", 'String'>
     readonly participantCount: FieldRef<"Session", 'Int'>
+    readonly pendingInstructor: FieldRef<"Session", 'String'>
+    readonly invitationStatus: FieldRef<"Session", 'String'>
     readonly createdAt: FieldRef<"Session", 'DateTime'>
   }
     
@@ -4202,7 +4241,8 @@ export namespace Prisma {
     Email: 'Email',
     TypeProfil: 'TypeProfil',
     MotdePasse: 'MotdePasse',
-    Age: 'Age'
+    Age: 'Age',
+    isValidated: 'isValidated'
   };
 
   export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
@@ -4226,6 +4266,8 @@ export namespace Prisma {
     time: 'time',
     description: 'description',
     participantCount: 'participantCount',
+    pendingInstructor: 'pendingInstructor',
+    invitationStatus: 'invitationStatus',
     createdAt: 'createdAt'
   };
 
@@ -4238,6 +4280,14 @@ export namespace Prisma {
   };
 
   export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
+
+
+  export const NullsOrder: {
+    first: 'first',
+    last: 'last'
+  };
+
+  export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
 
   /**
@@ -4256,6 +4306,13 @@ export namespace Prisma {
    * Reference to a field of type 'String'
    */
   export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+    
+
+
+  /**
+   * Reference to a field of type 'Boolean'
+   */
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -4287,6 +4344,7 @@ export namespace Prisma {
     TypeProfil?: StringFilter<"User"> | string
     MotdePasse?: StringFilter<"User"> | string
     Age?: IntFilter<"User"> | number
+    isValidated?: BoolFilter<"User"> | boolean
   }
 
   export type UserOrderByWithRelationInput = {
@@ -4297,6 +4355,7 @@ export namespace Prisma {
     TypeProfil?: SortOrder
     MotdePasse?: SortOrder
     Age?: SortOrder
+    isValidated?: SortOrder
   }
 
   export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -4310,6 +4369,7 @@ export namespace Prisma {
     TypeProfil?: StringFilter<"User"> | string
     MotdePasse?: StringFilter<"User"> | string
     Age?: IntFilter<"User"> | number
+    isValidated?: BoolFilter<"User"> | boolean
   }, "id">
 
   export type UserOrderByWithAggregationInput = {
@@ -4320,6 +4380,7 @@ export namespace Prisma {
     TypeProfil?: SortOrder
     MotdePasse?: SortOrder
     Age?: SortOrder
+    isValidated?: SortOrder
     _count?: UserCountOrderByAggregateInput
     _avg?: UserAvgOrderByAggregateInput
     _max?: UserMaxOrderByAggregateInput
@@ -4338,6 +4399,7 @@ export namespace Prisma {
     TypeProfil?: StringWithAggregatesFilter<"User"> | string
     MotdePasse?: StringWithAggregatesFilter<"User"> | string
     Age?: IntWithAggregatesFilter<"User"> | number
+    isValidated?: BoolWithAggregatesFilter<"User"> | boolean
   }
 
   export type InstructeurWhereInput = {
@@ -4395,22 +4457,26 @@ export namespace Prisma {
     NOT?: SessionWhereInput | SessionWhereInput[]
     id?: IntFilter<"Session"> | number
     title?: StringFilter<"Session"> | string
-    instructor?: StringFilter<"Session"> | string
+    instructor?: StringNullableFilter<"Session"> | string | null
     date?: DateTimeFilter<"Session"> | Date | string
     time?: StringFilter<"Session"> | string
     description?: StringFilter<"Session"> | string
     participantCount?: IntFilter<"Session"> | number
+    pendingInstructor?: StringNullableFilter<"Session"> | string | null
+    invitationStatus?: StringNullableFilter<"Session"> | string | null
     createdAt?: DateTimeFilter<"Session"> | Date | string
   }
 
   export type SessionOrderByWithRelationInput = {
     id?: SortOrder
     title?: SortOrder
-    instructor?: SortOrder
+    instructor?: SortOrderInput | SortOrder
     date?: SortOrder
     time?: SortOrder
     description?: SortOrder
     participantCount?: SortOrder
+    pendingInstructor?: SortOrderInput | SortOrder
+    invitationStatus?: SortOrderInput | SortOrder
     createdAt?: SortOrder
   }
 
@@ -4420,22 +4486,26 @@ export namespace Prisma {
     OR?: SessionWhereInput[]
     NOT?: SessionWhereInput | SessionWhereInput[]
     title?: StringFilter<"Session"> | string
-    instructor?: StringFilter<"Session"> | string
+    instructor?: StringNullableFilter<"Session"> | string | null
     date?: DateTimeFilter<"Session"> | Date | string
     time?: StringFilter<"Session"> | string
     description?: StringFilter<"Session"> | string
     participantCount?: IntFilter<"Session"> | number
+    pendingInstructor?: StringNullableFilter<"Session"> | string | null
+    invitationStatus?: StringNullableFilter<"Session"> | string | null
     createdAt?: DateTimeFilter<"Session"> | Date | string
   }, "id">
 
   export type SessionOrderByWithAggregationInput = {
     id?: SortOrder
     title?: SortOrder
-    instructor?: SortOrder
+    instructor?: SortOrderInput | SortOrder
     date?: SortOrder
     time?: SortOrder
     description?: SortOrder
     participantCount?: SortOrder
+    pendingInstructor?: SortOrderInput | SortOrder
+    invitationStatus?: SortOrderInput | SortOrder
     createdAt?: SortOrder
     _count?: SessionCountOrderByAggregateInput
     _avg?: SessionAvgOrderByAggregateInput
@@ -4450,11 +4520,13 @@ export namespace Prisma {
     NOT?: SessionScalarWhereWithAggregatesInput | SessionScalarWhereWithAggregatesInput[]
     id?: IntWithAggregatesFilter<"Session"> | number
     title?: StringWithAggregatesFilter<"Session"> | string
-    instructor?: StringWithAggregatesFilter<"Session"> | string
+    instructor?: StringNullableWithAggregatesFilter<"Session"> | string | null
     date?: DateTimeWithAggregatesFilter<"Session"> | Date | string
     time?: StringWithAggregatesFilter<"Session"> | string
     description?: StringWithAggregatesFilter<"Session"> | string
     participantCount?: IntWithAggregatesFilter<"Session"> | number
+    pendingInstructor?: StringNullableWithAggregatesFilter<"Session"> | string | null
+    invitationStatus?: StringNullableWithAggregatesFilter<"Session"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Session"> | Date | string
   }
 
@@ -4465,6 +4537,7 @@ export namespace Prisma {
     TypeProfil: string
     MotdePasse: string
     Age: number
+    isValidated?: boolean
   }
 
   export type UserUncheckedCreateInput = {
@@ -4475,6 +4548,7 @@ export namespace Prisma {
     TypeProfil: string
     MotdePasse: string
     Age: number
+    isValidated?: boolean
   }
 
   export type UserUpdateInput = {
@@ -4484,6 +4558,7 @@ export namespace Prisma {
     TypeProfil?: StringFieldUpdateOperationsInput | string
     MotdePasse?: StringFieldUpdateOperationsInput | string
     Age?: IntFieldUpdateOperationsInput | number
+    isValidated?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type UserUncheckedUpdateInput = {
@@ -4494,6 +4569,7 @@ export namespace Prisma {
     TypeProfil?: StringFieldUpdateOperationsInput | string
     MotdePasse?: StringFieldUpdateOperationsInput | string
     Age?: IntFieldUpdateOperationsInput | number
+    isValidated?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type UserCreateManyInput = {
@@ -4504,6 +4580,7 @@ export namespace Prisma {
     TypeProfil: string
     MotdePasse: string
     Age: number
+    isValidated?: boolean
   }
 
   export type UserUpdateManyMutationInput = {
@@ -4513,6 +4590,7 @@ export namespace Prisma {
     TypeProfil?: StringFieldUpdateOperationsInput | string
     MotdePasse?: StringFieldUpdateOperationsInput | string
     Age?: IntFieldUpdateOperationsInput | number
+    isValidated?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type UserUncheckedUpdateManyInput = {
@@ -4523,6 +4601,7 @@ export namespace Prisma {
     TypeProfil?: StringFieldUpdateOperationsInput | string
     MotdePasse?: StringFieldUpdateOperationsInput | string
     Age?: IntFieldUpdateOperationsInput | number
+    isValidated?: BoolFieldUpdateOperationsInput | boolean
   }
 
   export type InstructeurCreateInput = {
@@ -4573,75 +4652,89 @@ export namespace Prisma {
 
   export type SessionCreateInput = {
     title: string
-    instructor: string
+    instructor?: string | null
     date: Date | string
     time: string
     description: string
     participantCount?: number
+    pendingInstructor?: string | null
+    invitationStatus?: string | null
     createdAt?: Date | string
   }
 
   export type SessionUncheckedCreateInput = {
     id?: number
     title: string
-    instructor: string
+    instructor?: string | null
     date: Date | string
     time: string
     description: string
     participantCount?: number
+    pendingInstructor?: string | null
+    invitationStatus?: string | null
     createdAt?: Date | string
   }
 
   export type SessionUpdateInput = {
     title?: StringFieldUpdateOperationsInput | string
-    instructor?: StringFieldUpdateOperationsInput | string
+    instructor?: NullableStringFieldUpdateOperationsInput | string | null
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     time?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     participantCount?: IntFieldUpdateOperationsInput | number
+    pendingInstructor?: NullableStringFieldUpdateOperationsInput | string | null
+    invitationStatus?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SessionUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
-    instructor?: StringFieldUpdateOperationsInput | string
+    instructor?: NullableStringFieldUpdateOperationsInput | string | null
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     time?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     participantCount?: IntFieldUpdateOperationsInput | number
+    pendingInstructor?: NullableStringFieldUpdateOperationsInput | string | null
+    invitationStatus?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SessionCreateManyInput = {
     id?: number
     title: string
-    instructor: string
+    instructor?: string | null
     date: Date | string
     time: string
     description: string
     participantCount?: number
+    pendingInstructor?: string | null
+    invitationStatus?: string | null
     createdAt?: Date | string
   }
 
   export type SessionUpdateManyMutationInput = {
     title?: StringFieldUpdateOperationsInput | string
-    instructor?: StringFieldUpdateOperationsInput | string
+    instructor?: NullableStringFieldUpdateOperationsInput | string | null
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     time?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     participantCount?: IntFieldUpdateOperationsInput | number
+    pendingInstructor?: NullableStringFieldUpdateOperationsInput | string | null
+    invitationStatus?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SessionUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
     title?: StringFieldUpdateOperationsInput | string
-    instructor?: StringFieldUpdateOperationsInput | string
+    instructor?: NullableStringFieldUpdateOperationsInput | string | null
     date?: DateTimeFieldUpdateOperationsInput | Date | string
     time?: StringFieldUpdateOperationsInput | string
     description?: StringFieldUpdateOperationsInput | string
     participantCount?: IntFieldUpdateOperationsInput | number
+    pendingInstructor?: NullableStringFieldUpdateOperationsInput | string | null
+    invitationStatus?: NullableStringFieldUpdateOperationsInput | string | null
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
@@ -4670,6 +4763,11 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
   export type UserCountOrderByAggregateInput = {
     id?: SortOrder
     Nom?: SortOrder
@@ -4678,6 +4776,7 @@ export namespace Prisma {
     TypeProfil?: SortOrder
     MotdePasse?: SortOrder
     Age?: SortOrder
+    isValidated?: SortOrder
   }
 
   export type UserAvgOrderByAggregateInput = {
@@ -4693,6 +4792,7 @@ export namespace Prisma {
     TypeProfil?: SortOrder
     MotdePasse?: SortOrder
     Age?: SortOrder
+    isValidated?: SortOrder
   }
 
   export type UserMinOrderByAggregateInput = {
@@ -4703,6 +4803,7 @@ export namespace Prisma {
     TypeProfil?: SortOrder
     MotdePasse?: SortOrder
     Age?: SortOrder
+    isValidated?: SortOrder
   }
 
   export type UserSumOrderByAggregateInput = {
@@ -4743,6 +4844,14 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
   export type InstructeurCountOrderByAggregateInput = {
     id?: SortOrder
     Nom?: SortOrder
@@ -4772,6 +4881,20 @@ export namespace Prisma {
     id?: SortOrder
   }
 
+  export type StringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[]
@@ -4783,6 +4906,11 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
   export type SessionCountOrderByAggregateInput = {
     id?: SortOrder
     title?: SortOrder
@@ -4791,6 +4919,8 @@ export namespace Prisma {
     time?: SortOrder
     description?: SortOrder
     participantCount?: SortOrder
+    pendingInstructor?: SortOrder
+    invitationStatus?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -4807,6 +4937,8 @@ export namespace Prisma {
     time?: SortOrder
     description?: SortOrder
     participantCount?: SortOrder
+    pendingInstructor?: SortOrder
+    invitationStatus?: SortOrder
     createdAt?: SortOrder
   }
 
@@ -4818,12 +4950,31 @@ export namespace Prisma {
     time?: SortOrder
     description?: SortOrder
     participantCount?: SortOrder
+    pendingInstructor?: SortOrder
+    invitationStatus?: SortOrder
     createdAt?: SortOrder
   }
 
   export type SessionSumOrderByAggregateInput = {
     id?: SortOrder
     participantCount?: SortOrder
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -4850,6 +5001,14 @@ export namespace Prisma {
     decrement?: number
     multiply?: number
     divide?: number
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
   }
 
   export type DateTimeFieldUpdateOperationsInput = {
@@ -4879,6 +5038,11 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -4925,6 +5089,28 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type NestedStringNullableFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableFilter<$PrismaModel> | string | null
+  }
+
   export type NestedDateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[]
@@ -4934,6 +5120,34 @@ export namespace Prisma {
     gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
+  }
+
+  export type NestedStringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {

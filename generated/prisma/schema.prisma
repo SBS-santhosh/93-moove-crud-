@@ -15,13 +15,14 @@ datasource db {
 }
 
 model User {
-  id         Int    @id @default(autoincrement())
-  Nom        String
-  Prenom     String
-  Email      String
-  TypeProfil String
-  MotdePasse String
-  Age        Int
+  id          Int     @id @default(autoincrement())
+  Nom         String
+  Prenom      String
+  Email       String
+  TypeProfil  String
+  MotdePasse  String
+  Age         Int
+  isValidated Boolean @default(true)
 }
 
 model Instructeur {
@@ -32,12 +33,14 @@ model Instructeur {
 }
 
 model Session {
-  id               Int      @id @default(autoincrement())
-  title            String
-  instructor       String
-  date             DateTime
-  time             String
-  description      String
-  participantCount Int      @default(0)
-  createdAt        DateTime @default(now())
+  id                Int      @id @default(autoincrement())
+  title             String
+  instructor        String?
+  date              DateTime
+  time              String
+  description       String
+  participantCount  Int      @default(0)
+  pendingInstructor String?
+  invitationStatus  String?
+  createdAt         DateTime @default(now())
 }

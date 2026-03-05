@@ -15,15 +15,22 @@ export default async function Page() {
         const TypeProfile = formData.get("typeprofil") as string;
         const password = formData.get("password") as string;
         const Age = Number(formData.get("age") as string);
+
+        // Sécurité : Personne ne peut s'inscrire comme Admin via le formulaire public
+        let finalProfile = TypeProfile;
+        if (finalProfile === "Administrateur") {
+            finalProfile = "Utilisateur";
+        }
         // Création du user
         await prisma.user.create({
             data: {
                 Nom: nom,
                 Prenom: prenom,
                 Email: email,
-                TypeProfil: TypeProfile,
+                TypeProfil: finalProfile,
                 MotdePasse: password,
                 Age: Age,
+                isValidated: finalProfile !== "Instructeur",
             },
         });
 
@@ -132,7 +139,6 @@ export default async function Page() {
                                             >
                                                 <option value="Utilisateur">Utilisateur</option>
                                                 <option value="Instructeur">Instructeur</option>
-                                                <option value="Administrateur">Administrateur</option>
                                             </select>
                                         </div>
                                     </div>

@@ -124,7 +124,8 @@ exports.Prisma.UserScalarFieldEnum = {
   Email: 'Email',
   TypeProfil: 'TypeProfil',
   MotdePasse: 'MotdePasse',
-  Age: 'Age'
+  Age: 'Age',
+  isValidated: 'isValidated'
 };
 
 exports.Prisma.InstructeurScalarFieldEnum = {
@@ -142,12 +143,19 @@ exports.Prisma.SessionScalarFieldEnum = {
   time: 'time',
   description: 'description',
   participantCount: 'participantCount',
+  pendingInstructor: 'pendingInstructor',
+  invitationStatus: 'invitationStatus',
   createdAt: 'createdAt'
 };
 
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 
 

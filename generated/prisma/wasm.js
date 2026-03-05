@@ -96,7 +96,8 @@ exports.Prisma.UserScalarFieldEnum = {
   Email: 'Email',
   TypeProfil: 'TypeProfil',
   MotdePasse: 'MotdePasse',
-  Age: 'Age'
+  Age: 'Age',
+  isValidated: 'isValidated'
 };
 
 exports.Prisma.InstructeurScalarFieldEnum = {
@@ -114,12 +115,19 @@ exports.Prisma.SessionScalarFieldEnum = {
   time: 'time',
   description: 'description',
   participantCount: 'participantCount',
+  pendingInstructor: 'pendingInstructor',
+  invitationStatus: 'invitationStatus',
   createdAt: 'createdAt'
 };
 
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
+};
+
+exports.Prisma.NullsOrder = {
+  first: 'first',
+  last: 'last'
 };
 
 
@@ -166,7 +174,7 @@ const config = {
     "db"
   ],
   "activeProvider": "sqlite",
-  "postinstall": true,
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
@@ -175,13 +183,13 @@ const config = {
       }
     }
   },
-  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n  url      = \"file:app.db\"\n}\n\nmodel User {\n  id         Int    @id @default(autoincrement())\n  Nom        String\n  Prenom     String\n  Email      String\n  TypeProfil String\n  MotdePasse String\n  Age        Int\n}\n\nmodel Instructeur {\n  id     Int    @id @default(autoincrement())\n  Nom    String\n  Prenom String\n  Email  String\n}\n\nmodel Session {\n  id               Int      @id @default(autoincrement())\n  title            String\n  instructor       String\n  date             DateTime\n  time             String\n  description      String\n  participantCount Int      @default(0)\n  createdAt        DateTime @default(now())\n}\n",
-  "inlineSchemaHash": "741bdf1b2dea8ae81e35a7a1fa4f86f3544a12b763dfc283de7d3f3b8ed2a9ea",
+  "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client-js\"\n  output   = \"../generated/prisma\"\n}\n\ndatasource db {\n  provider = \"sqlite\"\n  url      = \"file:app.db\"\n}\n\nmodel User {\n  id          Int     @id @default(autoincrement())\n  Nom         String\n  Prenom      String\n  Email       String\n  TypeProfil  String\n  MotdePasse  String\n  Age         Int\n  isValidated Boolean @default(true)\n}\n\nmodel Instructeur {\n  id     Int    @id @default(autoincrement())\n  Nom    String\n  Prenom String\n  Email  String\n}\n\nmodel Session {\n  id                Int      @id @default(autoincrement())\n  title             String\n  instructor        String?\n  date              DateTime\n  time              String\n  description       String\n  participantCount  Int      @default(0)\n  pendingInstructor String?\n  invitationStatus  String?\n  createdAt         DateTime @default(now())\n}\n",
+  "inlineSchemaHash": "8fbfaa8e0de20b108bd93e5e410a404a12a17bb9a8c3a0fe7c7c49ac5c69df6f",
   "copyEngine": true
 }
 config.dirname = '/'
 
-config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"Nom\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Prenom\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"TypeProfil\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"MotdePasse\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Age\",\"kind\":\"scalar\",\"type\":\"Int\"}],\"dbName\":null},\"Instructeur\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"Nom\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Prenom\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Email\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"Session\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"title\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"instructor\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"time\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"description\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"participantCount\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
+config.runtimeDataModel = JSON.parse("{\"models\":{\"User\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"Nom\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Prenom\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Email\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"TypeProfil\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"MotdePasse\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Age\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"isValidated\",\"kind\":\"scalar\",\"type\":\"Boolean\"}],\"dbName\":null},\"Instructeur\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"Nom\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Prenom\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"Email\",\"kind\":\"scalar\",\"type\":\"String\"}],\"dbName\":null},\"Session\":{\"fields\":[{\"name\":\"id\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"title\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"instructor\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"date\",\"kind\":\"scalar\",\"type\":\"DateTime\"},{\"name\":\"time\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"description\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"participantCount\",\"kind\":\"scalar\",\"type\":\"Int\"},{\"name\":\"pendingInstructor\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"invitationStatus\",\"kind\":\"scalar\",\"type\":\"String\"},{\"name\":\"createdAt\",\"kind\":\"scalar\",\"type\":\"DateTime\"}],\"dbName\":null}},\"enums\":{},\"types\":{}}")
 defineDmmfProperty(exports.Prisma, config.runtimeDataModel)
 config.engineWasm = {
   getRuntime: async () => require('./query_engine_bg.js'),

@@ -21,8 +21,13 @@ export default async function Page() {
         });
 
         if (user) {
+            if (!user.isValidated) {
+                redirect("/connexion?error=not_validated");
+            }
             if (user.TypeProfil === "Administrateur") {
                 redirect("/modifsession");
+            } else if (user.TypeProfil === "Instructeur") {
+                redirect("/instructeurpanel");
             } else {
                 redirect("/sessions");
             }
